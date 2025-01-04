@@ -1,0 +1,275 @@
+
+body {
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+  }
+  
+  .theme-toggle {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .theme-toggle:hover {
+    background-color: #45a049;
+  }
+  
+  /* Dark Mode Styles */
+  body.dark-mode {
+    background-color: black;
+    color: white;
+  }
+  
+  body.dark-mode header {
+    background-color: #333;
+    color: white;
+  }
+  
+  body.dark-mode .theme-toggle {
+    background-color: #555;
+    color: #ddd;
+  }
+
+
+/* Header Section */
+header {
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 10px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+  
+  input#search {
+    margin: 1rem auto;
+    padding: 0.5rem;
+    width: 80%;
+    display: block;
+  }
+
+/* Hero Section with Background Image */
+.hero {
+    height: 100vh;
+    background-image: url('assets/Hero.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #45a049;
+}
+
+/* End of hero section */
+
+/* About Section */
+#about {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+    
+}
+.about1{
+    background-color: #45a049;
+}
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.about-content img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+.about-text {
+    max-width: 700px;
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: black; /* Light mode text color */
+}
+body.dark-mode #about {
+    background-color: #333; /* Dark mode background */
+    color: white; /* Ensure text is readable */
+}
+/* Dark mode text color */
+body.dark-mode .about-text {
+    color: black 
+}
+
+
+/*End of about section*/
+
+/* Event list section */
+#events {
+    padding: 20px;
+}
+.Title {
+display: grid;
+place-items:center;
+background-color: #45a049;
+}
+  
+  main {
+    padding: 1rem;
+    display: grid;
+    gap: 1rem;
+  }
+  
+  #event-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  
+  .event-card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .event-card h3 {
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .event-card button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .event-card button:hover {
+    background-color: #45a049;
+  }
+
+/* Back-Button*/
+
+  .Back-Button{
+    margin: 50px;
+    color: white;
+    background-color: #235726; 
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+  }
+  /* Hover Effect */
+.Back-Button:hover {
+    background-color: #1a1b1a; 
+    transform: scale(1.05); 
+  }
+
+  /* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .event-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        padding: 5px 0;
+    }
+
+    footer {
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    .event-card {
+        width: 100%;
+        max-width: 280px;
+    }
+}
