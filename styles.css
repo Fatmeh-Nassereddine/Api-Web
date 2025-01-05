@@ -30,7 +30,7 @@ body {
   
   /* Dark Mode Styles */
   body.dark-mode {
-    background-color: black;
+    background-color: #333;
     color: white;
   }
   
@@ -153,11 +153,11 @@ nav ul li a {
     text-align: left;
     font-size: 1.1rem;
     line-height: 1.6;
-    color: black; /* Light mode text color */
+    color: black; 
 }
 body.dark-mode #about {
-    background-color: #333; /* Dark mode background */
-    color: white; /* Ensure text is readable */
+    background-color: #333; 
+    color: white; 
 }
 /* Dark mode text color */
 body.dark-mode .about-text {
@@ -229,6 +229,49 @@ background-color: #45a049;
     background-color: #1a1b1a; 
     transform: scale(1.05); 
   }
+
+ /*Event-details*/
+  #event-details {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  #event-details h2 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  #event-details p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  .event-card button {
+    transition: transform 0.2s, background-color 0.3s;
+  }
+  
+  .event-card button:hover {
+    transform: scale(1.05);
+    background-color: #45a049;
+  }
+  
+
+body.dark-mode #event-details {
+    background-color: #222; 
+    color: #fff; 
+    border: 1px solid #444; 
+}
+
+body.dark-mode #event-details h2 {
+    color: #fff;
+}
+
+body.dark-mode #event-details p {
+    color: #ccc; 
+}
 
   /* Footer */
 footer {
