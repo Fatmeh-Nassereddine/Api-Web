@@ -65,8 +65,11 @@ document.addEventListener("DOMContentLoaded", () => {
       eventCard.innerHTML = `
         <h3>${event.title}</h3>
         <p>${event.body.substring(0, 50)}...</p>
-        <button onclick='viewDetails(${event.id})'>View Details</button>
-      `;
+        `;
+      const viewDetailsButton = document.createElement("button");
+      viewDetailsButton.textContent = "View Details";
+      viewDetailsButton.addEventListener("click", () => viewDetails(event.id));
+      eventCard.appendChild(viewDetailsButton);
       eventContainer.appendChild(eventCard);
     });
   }
