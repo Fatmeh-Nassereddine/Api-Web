@@ -273,6 +273,62 @@ body.dark-mode #event-details p {
     color: #ccc; 
 }
 
+.add-event-form {
+  margin: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.add-event-form input,
+.add-event-form textarea {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-event-form button {
+  padding: 10px 15px;
+  color: white;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-event-form button:hover {
+  background-color: #218838;
+}
+
+.delete-button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  color: white;
+  background-color: #dc3545;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
   /* Footer */
 footer {
     text-align: center;
