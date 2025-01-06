@@ -4,13 +4,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const eventContainer = document.getElementById("event-container");
   const searchInput = document.getElementById("search");
   const addEventButton = document.getElementById("add-event");
+  const loadingMessage = document.getElementById("loading-message"); // Add a loading message
 
 
   // Debugging logs
   console.log("eventContainer:", eventContainer);
   console.log("searchInput:", searchInput);
   console.log("addEventButton:", addEventButton);
+  console.log("loadingMessage:", loadingMessage);
 
+  // Show the Add Event button immediately
+  addEventButton.style.display = "block";
+  console.log("Add Event button is now visible.");
 
   if (!eventContainer) {
     console.error("Element with id 'event-container' not found.");
@@ -25,12 +30,15 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // Show the Add Event button immediately
-  addEventButton.style.display = "block";
-  console.log("Add Event button is now visible.");
+  // Show a loading message until data is fetched
+  if (loadingMessage) {
+    loadingMessage.style.display = "block";
+  }
+
 
   // Check if data is already in localStorage
   const storedEvents = JSON.parse(localStorage.getItem("eventsData")) || [];
+  console.log("Stored events:", storedEvents);  // Log events to check
 
   // Initialize event features
   function initializeEventFeatures(events) {
@@ -49,7 +57,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (storedEvents.length > 0) {
     console.log("Using cached events from localStorage.");
     initializeEventFeatures(storedEvents);
-  } else {
+    if (loadingMessage) {
+      loadingMessage.style.display = "none"; // Hide the loading message
+    }
+  } 
+  
+  else {
     // Fetch events from API
     console.log("Fetching events from API...");
     fetch("https://jsonplaceholder.typicode.com/posts")
@@ -65,12 +78,20 @@ document.addEventListener("DOMContentLoaded", () => {
         // Store enriched data in localStorage
         localStorage.setItem("eventsData", JSON.stringify(enrichedData));
         initializeEventFeatures(enrichedData);
+        if (loadingMessage) {
+          loadingMessage.style.display = "none"; // Hide the loading message
+        }
       })
-      .catch((error) => console.error("Error fetching data:", error));
+      .catch((error) => {console.error("Error fetching data:", error)
+        if (loadingMessage) {
+          loadingMessage.innerHTML = "Failed to load events. Please try again later.";
+        }
+  });
   }
 
   // Add Event Function
   function addEvent(events) {
+    console.log("Adding new event...");
     const newEvent = {
       id: events.length + 1,
       title: `New Event ${events.length + 1}`,
@@ -88,6 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Display events in the container
   function displayEvents(events) {
+    console.log("Displaying events:", events);  // Check if events are being passed
     eventContainer.innerHTML = "";
     if (events.length === 0) {
       eventContainer.innerHTML = "<p>No events found.</p>";
